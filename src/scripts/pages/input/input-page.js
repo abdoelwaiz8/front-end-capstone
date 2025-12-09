@@ -3,10 +3,10 @@ import { parseActivePathname } from '../../routes/url-parser';
 export default class InputPage {
   async render() {
     const url = parseActivePathname();
-    const type = url.id; // 'bapb' atau 'bapp'
+    const type = url.id;
     const isBarang = type === 'bapb';
     
-    const title = isBarang ? 'Input BAPB (Barang)' : 'Input BAPP (Jasa)';
+    const title = isBarang ? 'INPUT BAPB (BARANG)' : 'INPUT BAPP (JASA)';
     const itemLabel = isBarang ? 'Nama Barang' : 'Nama Jasa/Pekerjaan';
     const item1 = isBarang ? 'MacBook Pro M3 14"' : 'Pembuatan Website Profile';
     const item2 = isBarang ? 'Monitor Dell 27"' : 'Maintenance Server Bulanan';
@@ -14,24 +14,24 @@ export default class InputPage {
 
     return `
       <!-- Page Header -->
-      <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-8 gap-4">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-8 gap-6">
           <div>
-              <h2 class="text-3xl font-bold text-slate-900 mb-2 tracking-tight">${title}</h2>
-              <div class="flex items-center gap-3 mt-2">
-                  <span class="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-2 rounded-xl border border-violet-100 text-sm font-bold">
+              <h2 class="heading-architectural text-4xl text-slate-900 mb-3">${title}</h2>
+              <div class="flex items-center gap-3 mt-4">
+                  <span class="inline-flex items-center gap-2 bg-white border-2 border-slate-900 px-4 py-2 text-xs font-black tracking-tight">
                       <i class="ph-bold ph-barcode"></i>
                       PO-2025-001
                   </span>
-                  <span class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-xl border border-indigo-100 text-sm font-bold">
+                  <span class="inline-flex items-center gap-2 bg-lime-400 border-2 border-slate-900 px-4 py-2 text-xs font-black tracking-tight">
                       <i class="ph-bold ph-buildings"></i>
-                      PT. Teknologi Maju
+                      PT. TEKNOLOGI MAJU
                   </span>
               </div>
           </div>
           <button onclick="history.back()" 
-                  class="inline-flex items-center gap-2 text-slate-600 hover:text-violet-600 font-bold transition-colors px-5 py-3 rounded-2xl hover:bg-white shadow-sm hover:shadow-md">
+                  class="inline-flex items-center gap-2 text-slate-900 hover:text-lime-400 font-black transition-colors px-6 py-4 border-2 border-slate-900 hover:bg-slate-900 hover:text-lime-400 uppercase tracking-tight text-xs">
               <i class="ph-bold ph-arrow-left text-lg"></i> 
-              Kembali
+              KEMBALI
           </button>
       </div>
 
@@ -42,116 +42,117 @@ export default class InputPage {
           <div class="lg:col-span-1 space-y-6">
               
               <!-- AI Auto-Scan Card -->
-              <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl shadow-soft-lg overflow-hidden">
+              <div class="bg-slate-900 border-2 border-slate-900 overflow-hidden relative">
+                  <!-- Architectural Grid -->
+                  <div class="absolute inset-0" style="background-image: 
+                      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+                      background-size: 20px 20px;">
+                  </div>
+                  
                   <div class="p-8 relative">
-                      <!-- Decorative Elements -->
-                      <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                      <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
-                      
-                      <div class="relative">
-                          <!-- Icon Header -->
-                          <div class="flex items-center gap-3 mb-4">
-                              <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-xl flex items-center justify-center">
-                                  <i class="ph-bold ph-magic-wand text-white text-2xl"></i>
-                              </div>
-                              <h3 class="font-bold text-white text-lg">AI Auto-Scan</h3>
+                      <!-- Icon Header -->
+                      <div class="flex items-center gap-3 mb-6 border-b-2 border-lime-400 pb-4">
+                          <div class="w-12 h-12 bg-lime-400 border-2 border-white flex items-center justify-center">
+                              <i class="ph-bold ph-magic-wand text-slate-900 text-2xl"></i>
                           </div>
-                          
-                          <!-- Description -->
-                          <p class="text-white/90 text-sm leading-relaxed mb-6 font-medium">
-                              Upload foto dokumen pendukung (Surat Jalan/Berita Acara), AI akan mengisi data otomatis dengan akurasi tinggi.
-                          </p>
-                          
-                          <!-- Features List -->
-                          <div class="space-y-2 mb-6">
-                              <div class="flex items-center gap-2 text-white/90 text-xs font-semibold">
-                                  <i class="ph-bold ph-check-circle"></i>
-                                  <span>Deteksi otomatis teks & angka</span>
-                              </div>
-                              <div class="flex items-center gap-2 text-white/90 text-xs font-semibold">
-                                  <i class="ph-bold ph-check-circle"></i>
-                                  <span>Akurasi hingga 99%</span>
-                              </div>
-                              <div class="flex items-center gap-2 text-white/90 text-xs font-semibold">
-                                  <i class="ph-bold ph-check-circle"></i>
-                                  <span>Proses dalam hitungan detik</span>
-                              </div>
-                          </div>
-                          
-                          <!-- Upload Button -->
-                          <input type="file" id="suratJalanInput" class="hidden" accept="image/*">
-                          <button id="btn-ai-scan" 
-                                  class="w-full bg-white hover:bg-white/90 text-indigo-600 py-4 rounded-2xl font-bold transition-all flex justify-center items-center gap-2 shadow-xl hover:scale-[1.02]">
-                              <i class="ph-bold ph-camera text-xl"></i> 
-                              <span>Scan Dokumen</span>
-                          </button>
-                          
-                          <!-- Status -->
-                          <p id="ai-status" class="text-center text-xs text-white/80 mt-3 hidden font-semibold">
-                              <i class="ph-bold ph-spinner animate-spin"></i> Sedang menganalisis gambar...
-                          </p>
+                          <h3 class="heading-architectural text-white text-lg">AI AUTO-SCAN</h3>
                       </div>
+                      
+                      <!-- Description -->
+                      <p class="text-white text-xs leading-relaxed mb-6 font-bold uppercase tracking-wider">
+                          UPLOAD FOTO DOKUMEN PENDUKUNG, AI AKAN MENGISI DATA OTOMATIS DENGAN AKURASI TINGGI.
+                      </p>
+                      
+                      <!-- Features List -->
+                      <div class="space-y-3 mb-8 border-l-2 border-lime-400 pl-4">
+                          <div class="flex items-start gap-2 text-white text-xs font-bold tracking-tight">
+                              <i class="ph-bold ph-check-circle text-lime-400 mt-0.5"></i>
+                              <span>DETEKSI OTOMATIS TEKS & ANGKA</span>
+                          </div>
+                          <div class="flex items-start gap-2 text-white text-xs font-bold tracking-tight">
+                              <i class="ph-bold ph-check-circle text-lime-400 mt-0.5"></i>
+                              <span>AKURASI HINGGA 99%</span>
+                          </div>
+                          <div class="flex items-start gap-2 text-white text-xs font-bold tracking-tight">
+                              <i class="ph-bold ph-check-circle text-lime-400 mt-0.5"></i>
+                              <span>PROSES DALAM HITUNGAN DETIK</span>
+                          </div>
+                      </div>
+                      
+                      <!-- Upload Button -->
+                      <input type="file" id="suratJalanInput" class="hidden" accept="image/*">
+                      <button id="btn-ai-scan" 
+                              class="w-full bg-lime-400 hover:bg-lime-500 text-slate-900 py-5 font-black transition-all flex justify-center items-center gap-2 border-2 border-white uppercase tracking-tight text-sm">
+                          <i class="ph-bold ph-camera text-xl"></i> 
+                          <span>SCAN DOKUMEN</span>
+                      </button>
+                      
+                      <!-- Status -->
+                      <p id="ai-status" class="text-center text-xs text-lime-400 mt-4 hidden font-black tracking-widest uppercase">
+                          <i class="ph-bold ph-spinner animate-spin"></i> SEDANG MENGANALISIS...
+                      </p>
                   </div>
               </div>
 
               <!-- Tips Card -->
-              <div class="bg-white rounded-3xl shadow-soft border border-slate-100 p-6">
-                  <div class="flex items-center gap-3 mb-4">
-                      <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
-                          <i class="ph-bold ph-lightbulb text-amber-600 text-xl"></i>
+              <div class="bg-white border-2 border-slate-900 p-6">
+                  <div class="flex items-center gap-3 mb-4 pb-3 border-b-2 border-slate-900">
+                      <div class="w-10 h-10 bg-amber-400 border-2 border-slate-900 flex items-center justify-center">
+                          <i class="ph-bold ph-lightbulb text-slate-900 text-xl"></i>
                       </div>
-                      <h4 class="font-bold text-slate-900">Tips Scan</h4>
+                      <h4 class="font-black text-slate-900 uppercase tracking-tight">TIPS SCAN</h4>
                   </div>
-                  <ul class="space-y-2 text-sm text-slate-600">
+                  <ul class="space-y-3 text-xs text-slate-600">
                       <li class="flex items-start gap-2">
-                          <i class="ph-bold ph-check text-emerald-600 mt-0.5"></i>
-                          <span>Pastikan foto dalam kondisi terang</span>
+                          <i class="ph-bold ph-check text-lime-400 mt-0.5 text-base"></i>
+                          <span class="font-bold uppercase tracking-tight">PASTIKAN FOTO DALAM KONDISI TERANG</span>
                       </li>
                       <li class="flex items-start gap-2">
-                          <i class="ph-bold ph-check text-emerald-600 mt-0.5"></i>
-                          <span>Dokumen dalam posisi lurus</span>
+                          <i class="ph-bold ph-check text-lime-400 mt-0.5 text-base"></i>
+                          <span class="font-bold uppercase tracking-tight">DOKUMEN DALAM POSISI LURUS</span>
                       </li>
                       <li class="flex items-start gap-2">
-                          <i class="ph-bold ph-check text-emerald-600 mt-0.5"></i>
-                          <span>Teks terlihat jelas dan fokus</span>
+                          <i class="ph-bold ph-check text-lime-400 mt-0.5 text-base"></i>
+                          <span class="font-bold uppercase tracking-tight">TEKS TERLIHAT JELAS DAN FOKUS</span>
                       </li>
                   </ul>
               </div>
           </div>
 
           <!-- Right Content: Form -->
-          <div class="lg:col-span-2 bg-white rounded-3xl shadow-soft border border-slate-100 overflow-hidden">
+          <div class="lg:col-span-2 bg-white border-2 border-slate-900 overflow-hidden">
               
               <!-- Form Header -->
-              <div class="px-8 py-6 border-b border-slate-100 bg-gradient-to-r from-violet-50 to-indigo-50">
-                  <h3 class="font-bold text-slate-900 text-xl mb-1">Detail Item ${isBarang ? 'Barang' : 'Jasa'}</h3>
-                  <p class="text-sm text-slate-600 font-medium">Lengkapi informasi penerimaan ${isBarang ? 'barang' : 'jasa'} sesuai dokumen</p>
+              <div class="px-8 py-6 border-b-2 border-slate-900 bg-slate-50">
+                  <h3 class="heading-architectural text-slate-900 text-2xl mb-2">DETAIL ITEM ${isBarang ? 'BARANG' : 'JASA'}</h3>
+                  <p class="text-xs text-slate-600 font-bold uppercase tracking-widest">LENGKAPI INFORMASI PENERIMAAN ${isBarang ? 'BARANG' : 'JASA'} SESUAI DOKUMEN</p>
               </div>
 
               <!-- Form Content -->
-              <form id="form-input" class="p-8 space-y-6">
+              <form id="form-input" class="p-8 space-y-8">
                   
                   <!-- Item 1 -->
-                  <div class="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl p-6 border-2 border-slate-200">
-                      <div class="flex items-start justify-between mb-4">
+                  <div class="bg-slate-50 border-2 border-slate-900 p-6">
+                      <div class="flex items-start justify-between mb-6">
                           <div>
-                              <h4 class="font-bold text-slate-900 text-base mb-1">${item1}</h4>
-                              <p class="text-sm text-slate-600 font-semibold">Pesanan: <span class="text-violet-600">10 ${unit}</span></p>
+                              <h4 class="font-black text-slate-900 text-base mb-2 uppercase tracking-tight">${item1}</h4>
+                              <p class="text-xs text-slate-600 font-bold tracking-tight">PESANAN: <span class="text-slate-900">10 ${unit}</span></p>
                           </div>
-                          <span class="bg-violet-100 text-violet-700 px-3 py-1.5 rounded-xl text-xs font-bold border border-violet-200">
-                              Item #1
+                          <span class="bg-lime-400 text-slate-900 border-2 border-slate-900 px-3 py-2 text-xs font-black tracking-tight">
+                              ITEM #1
                           </span>
                       </div>
                       
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                              <label class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider">
-                                  ${isBarang ? 'Qty Diterima' : 'Progress (%)'}
+                              <label class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                                  ${isBarang ? 'QTY DITERIMA' : 'PROGRESS (%)'}
                               </label>
                               <input 
                                   type="number" 
                                   id="qty_1" 
-                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-semibold focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all" 
+                                  class="w-full px-4 py-4 border-2 border-slate-900 text-sm font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all" 
                                   placeholder="0"
                                   min="0"
                                   max="10"
@@ -159,53 +160,53 @@ export default class InputPage {
                           </div>
                           
                           <div>
-                              <label class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider">
-                                  ${isBarang ? 'Kondisi' : 'Hasil'}
+                              <label class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                                  ${isBarang ? 'KONDISI' : 'HASIL'}
                               </label>
                               <select 
                                   id="cond_1" 
-                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-semibold focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all bg-white"
+                                  class="w-full px-4 py-4 border-2 border-slate-900 text-sm font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all bg-white"
                               >
-                                  <option value="good">✓ Baik / Sesuai</option>
-                                  <option value="bad">✗ Rusak / Revisi</option>
+                                  <option value="good">✓ BAIK / SESUAI</option>
+                                  <option value="bad">✗ RUSAK / REVISI</option>
                               </select>
                           </div>
                           
                           <div class="md:col-span-2">
-                              <label class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider">
-                                  Catatan Tambahan
+                              <label class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                                  CATATAN TAMBAHAN
                               </label>
                               <textarea 
                                   id="note_1" 
                                   rows="2"
-                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-medium focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all resize-none" 
-                                  placeholder="Tambahkan catatan jika diperlukan..."
+                                  class="w-full px-4 py-4 border-2 border-slate-900 text-sm font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all resize-none" 
+                                  placeholder="TAMBAHKAN CATATAN JIKA DIPERLUKAN..."
                               ></textarea>
                           </div>
                       </div>
                   </div>
 
                   <!-- Item 2 -->
-                  <div class="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl p-6 border-2 border-slate-200">
-                      <div class="flex items-start justify-between mb-4">
+                  <div class="bg-slate-50 border-2 border-slate-900 p-6">
+                      <div class="flex items-start justify-between mb-6">
                           <div>
-                              <h4 class="font-bold text-slate-900 text-base mb-1">${item2}</h4>
-                              <p class="text-sm text-slate-600 font-semibold">Pesanan: <span class="text-violet-600">5 ${unit}</span></p>
+                              <h4 class="font-black text-slate-900 text-base mb-2 uppercase tracking-tight">${item2}</h4>
+                              <p class="text-xs text-slate-600 font-bold tracking-tight">PESANAN: <span class="text-slate-900">5 ${unit}</span></p>
                           </div>
-                          <span class="bg-indigo-100 text-indigo-700 px-3 py-1.5 rounded-xl text-xs font-bold border border-indigo-200">
-                              Item #2
+                          <span class="bg-white text-slate-900 border-2 border-slate-900 px-3 py-2 text-xs font-black tracking-tight">
+                              ITEM #2
                           </span>
                       </div>
                       
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                              <label class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider">
-                                  ${isBarang ? 'Qty Diterima' : 'Progress (%)'}
+                              <label class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                                  ${isBarang ? 'QTY DITERIMA' : 'PROGRESS (%)'}
                               </label>
                               <input 
                                   type="number" 
                                   id="qty_2" 
-                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-semibold focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all" 
+                                  class="w-full px-4 py-4 border-2 border-slate-900 text-sm font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all" 
                                   placeholder="0"
                                   min="0"
                                   max="5"
@@ -213,49 +214,49 @@ export default class InputPage {
                           </div>
                           
                           <div>
-                              <label class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider">
-                                  ${isBarang ? 'Kondisi' : 'Hasil'}
+                              <label class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                                  ${isBarang ? 'KONDISI' : 'HASIL'}
                               </label>
                               <select 
                                   id="cond_2" 
-                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-semibold focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all bg-white"
+                                  class="w-full px-4 py-4 border-2 border-slate-900 text-sm font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all bg-white"
                               >
-                                  <option value="good">✓ Baik / Sesuai</option>
-                                  <option value="bad">✗ Rusak / Revisi</option>
+                                  <option value="good">✓ BAIK / SESUAI</option>
+                                  <option value="bad">✗ RUSAK / REVISI</option>
                               </select>
                           </div>
                           
                           <div class="md:col-span-2">
-                              <label class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider">
-                                  Catatan Tambahan
+                              <label class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                                  CATATAN TAMBAHAN
                               </label>
                               <textarea 
                                   id="note_2" 
                                   rows="2"
-                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-medium focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all resize-none" 
-                                  placeholder="Tambahkan catatan jika diperlukan..."
+                                  class="w-full px-4 py-4 border-2 border-slate-900 text-sm font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all resize-none" 
+                                  placeholder="TAMBAHKAN CATATAN JIKA DIPERLUKAN..."
                               ></textarea>
                           </div>
                       </div>
                   </div>
 
                   <!-- Action Buttons -->
-                  <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t-2 border-slate-100">
+                  <div class="flex flex-col sm:flex-row gap-4 pt-8 border-t-2 border-slate-900">
                       <button 
                           type="button" 
                           onclick="history.back()" 
-                          class="flex-1 px-6 py-4 border-2 border-slate-200 rounded-2xl text-slate-700 font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+                          class="flex-1 px-6 py-5 border-2 border-slate-900 text-slate-900 font-black hover:bg-slate-900 hover:text-white transition-all flex items-center justify-center gap-2 uppercase tracking-tight text-sm"
                       >
                           <i class="ph-bold ph-x-circle"></i>
-                          Batal
+                          BATAL
                       </button>
                       
                       <button 
                           type="submit" 
-                          class="flex-1 px-6 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white rounded-2xl font-bold shadow-lg shadow-violet-500/30 hover:shadow-xl transition-all flex items-center justify-center gap-2 hover:scale-[1.02]"
+                          class="flex-1 px-6 py-5 bg-lime-400 hover:bg-lime-500 border-2 border-slate-900 text-slate-900 font-black transition-all flex items-center justify-center gap-2 hover-sharp uppercase tracking-tight text-sm"
                       >
                           <i class="ph-bold ph-check-circle text-xl"></i>
-                          Submit Data
+                          SUBMIT DATA
                       </button>
                   </div>
               </form>
@@ -271,7 +272,7 @@ export default class InputPage {
     
     const titleElement = document.getElementById('page-title');
     if (titleElement) {
-        titleElement.innerHTML = isBarang ? 'Input BAPB (Barang)' : 'Input BAPP (Jasa)';
+        titleElement.innerHTML = isBarang ? 'INPUT BAPB (BARANG)' : 'INPUT BAPP (JASA)';
     }
 
     // AI Scanner Logic
@@ -283,25 +284,23 @@ export default class InputPage {
     
     inputScan.addEventListener('change', () => {
         if (inputScan.files && inputScan.files[0]) {
-            btnScan.innerHTML = `<i class="ph-bold ph-spinner animate-spin"></i> Scanning...`;
+            btnScan.innerHTML = `<i class="ph-bold ph-spinner animate-spin"></i> SCANNING...`;
             btnScan.disabled = true;
             btnScan.classList.add('opacity-75');
             status.classList.remove('hidden');
 
             setTimeout(() => {
                 document.getElementById('qty_1').value = 10;
-                document.getElementById('note_1').value = "✓ Verified by AI Scan (Confidence: 99.2%)";
+                document.getElementById('note_1').value = "✓ VERIFIED BY AI SCAN (CONFIDENCE: 99.2%)";
                 document.getElementById('qty_2').value = 5;
-                document.getElementById('note_2').value = "✓ Verified by AI Scan (Confidence: 98.7%)";
+                document.getElementById('note_2').value = "✓ VERIFIED BY AI SCAN (CONFIDENCE: 98.7%)";
 
-                btnScan.innerHTML = `<i class="ph-bold ph-check-circle"></i> Scan Berhasil!`;
+                btnScan.innerHTML = `<i class="ph-bold ph-check-circle"></i> SCAN BERHASIL!`;
                 btnScan.classList.remove('opacity-75');
-                btnScan.classList.remove('bg-white', 'text-indigo-600');
-                btnScan.classList.add('bg-emerald-500', 'text-white');
+                btnScan.classList.remove('bg-lime-400');
+                btnScan.classList.add('bg-emerald-500', 'border-white');
                 
-                status.innerHTML = '<i class="ph-bold ph-check-circle"></i> Data berhasil diekstrak!';
-                status.classList.remove('text-white/80');
-                status.classList.add('text-emerald-300', 'font-bold');
+                status.innerHTML = '<i class="ph-bold ph-check-circle"></i> DATA BERHASIL DIEKSTRAK!';
             }, 2000);
         }
     });
@@ -321,16 +320,16 @@ export default class InputPage {
 
   _showSuccessNotification() {
     const notification = document.createElement('div');
-    notification.className = 'fixed top-8 right-8 bg-white rounded-2xl shadow-2xl border border-emerald-200 p-6 z-50';
+    notification.className = 'fixed top-8 right-8 bg-lime-400 border-2 border-slate-900 p-6 z-50';
     notification.style.animation = 'slideInRight 0.3s ease-out';
     notification.innerHTML = `
         <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg">
-                <i class="ph-bold ph-check text-white text-2xl"></i>
+            <div class="w-12 h-12 bg-slate-900 flex items-center justify-center">
+                <i class="ph-bold ph-check text-lime-400 text-2xl"></i>
             </div>
             <div>
-                <h4 class="font-bold text-slate-900 mb-1">Data Berhasil Disimpan!</h4>
-                <p class="text-sm text-slate-600">Mengarahkan ke halaman BAPB...</p>
+                <h4 class="font-black text-slate-900 mb-1 tracking-tight uppercase">DATA BERHASIL DISIMPAN!</h4>
+                <p class="text-xs text-slate-900 font-bold tracking-tight">MENGARAHKAN KE HALAMAN BAPB...</p>
             </div>
         </div>
     `;
@@ -339,7 +338,6 @@ export default class InputPage {
     
     setTimeout(() => {
         notification.style.opacity = '0';
-        notification.style.transform = 'translateX(20px)';
         setTimeout(() => notification.remove(), 300);
     }, 3000);
   }
