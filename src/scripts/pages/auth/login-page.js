@@ -68,6 +68,19 @@ export default class LoginPage {
                     </p>
                 </div>
 
+                <!-- Role Info Box -->
+                <div class="bg-slate-900 border-2 border-slate-900 p-5 mb-6">
+                    <p class="text-[10px] text-lime-400 font-black tracking-widest uppercase mb-3">
+                        <i class="ph-bold ph-info text-sm mr-1"></i>
+                        DEMO LOGIN - GUNAKAN EMAIL BERIKUT:
+                    </p>
+                    <div class="space-y-2 text-xs text-white font-bold">
+                        <p>• <span class="text-lime-400">vendor@mitra.com</span> → ROLE: VENDOR</p>
+                        <p>• <span class="text-lime-400">direksi@perusahaan.com</span> → ROLE: APPROVER</p>
+                        <p>• <span class="text-lime-400">admin@perusahaan.com</span> → ROLE: VERIFIKATOR</p>
+                    </div>
+                </div>
+
                 <!-- Login Form -->
                 <form id="login-form" class="space-y-6">
                     
@@ -189,12 +202,66 @@ export default class LoginPage {
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
+      const email = document.getElementById('email').value.toLowerCase();
+      
+      // RBAC Logic - Determine Role & Username based on Email
+      let userRole = 'VERIFIKATOR'; // Default role
+      let userName = 'Staff Admin Gudang';
+      let userJobTitle = 'Admin Gudang';
+      let userInitials = 'SA';
+      
+      if (email.includes('vendor')) {
+        userRole = 'VENDOR';
+        userName = 'PT. Mitra Sejahtera';
+        userJobTitle = 'Vendor Partner';
+        userInitials = 'MS';
+      } else if (email.includes('direksi') || email.includes('bos')) {
+        userRole = 'APPROVER';
+        userName = 'Bpk. Direktur Utama';
+        userJobTitle = 'Direktur Utama';
+        userInitials = 'DU';
+      }
+      
       // Save to sessionStorage
       sessionStorage.setItem('userToken', 'logged-in');
+      sessionStorage.setItem('userRole', userRole);
+      sessionStorage.setItem('userName', userName);
+      sessionStorage.setItem('userJobTitle', userJobTitle);
+      sessionStorage.setItem('userInitials', userInitials);
+
+      // Show Success Notification
+      this._showLoginSuccessNotification(userName, userRole);
 
       // Redirect to Dashboard
-      window.location.hash = '#/';
-      window.location.reload();
+      setTimeout(() => {
+        window.location.hash = '#/';
+        window.location.reload();
+      }, 1500);
     });
+  }
+
+  _showLoginSuccessNotification(name, role) {
+    const notification = document.createElement('div');
+    notification.className = 'fixed top-8 right-8 bg-lime-400 border-2 border-slate-900 p-6 z-[9999]';
+    notification.innerHTML = `
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-slate-900 flex items-center justify-center">
+                <i class="ph-bold ph-check text-lime-400 text-2xl"></i>
+            </div>
+            <div>
+                <h4 class="font-black text-slate-900 mb-1 tracking-tight uppercase">LOGIN BERHASIL!</h4>
+                <p class="text-xs text-slate-900 font-bold tracking-tight">SELAMAT DATANG ${name}</p>
+                <p class="text-[10px] text-slate-700 font-bold tracking-tight mt-1">ROLE: ${role}</p>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.3s';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
   }
 }
