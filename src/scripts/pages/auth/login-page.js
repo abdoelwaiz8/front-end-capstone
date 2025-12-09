@@ -1,33 +1,43 @@
 export default class LoginPage {
   async render() {
     return `
-      <div class="flex h-screen w-screen absolute inset-0 z-50 bg-slate-50">
+      <div class="flex h-screen w-screen absolute inset-0 z-50 noise-texture">
         
-        <!-- Left Panel: Branding & Illustration -->
-        <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-violet-600 via-indigo-600 to-purple-700 relative overflow-hidden">
-            <!-- Decorative Elements -->
-            <div class="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-32 -left-32 w-64 h-64 border-4 border-white/20 rounded-full"></div>
-            <div class="absolute -top-40 -right-40 w-80 h-80 border-4 border-white/20 rounded-full"></div>
+        <!-- Left Panel: Architectural Branding -->
+        <div class="hidden lg:flex lg:w-1/2 bg-slate-900 relative overflow-hidden">
+            <!-- Architectural Grid Pattern -->
+            <div class="absolute inset-0" style="background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+                background-size: 40px 40px;">
+            </div>
+            
+            <!-- Decorative Lines - Architectural -->
+            <div class="absolute inset-0">
+                <div class="absolute top-1/4 left-0 w-full h-px bg-lime-400"></div>
+                <div class="absolute top-2/4 left-0 w-full h-px bg-white opacity-10"></div>
+                <div class="absolute top-3/4 left-0 w-full h-px bg-white opacity-10"></div>
+                <div class="absolute left-1/4 top-0 h-full w-px bg-white opacity-10"></div>
+                <div class="absolute left-3/4 top-0 h-full w-px bg-white opacity-10"></div>
+            </div>
             
             <!-- Content -->
-            <div class="relative z-10 flex flex-col justify-center items-center w-full px-16 text-center">
-                <div class="w-24 h-24 rounded-3xl bg-white/20 backdrop-blur-xl flex items-center justify-center mb-8 shadow-2xl">
-                    <i class="ph-bold ph-briefcase text-white text-5xl"></i>
+            <div class="relative z-10 flex flex-col justify-center items-center w-full px-16">
+                <div class="w-24 h-24 bg-lime-400 flex items-center justify-center mb-8 border-4 border-white">
+                    <i class="ph-bold ph-briefcase text-slate-900 text-5xl"></i>
                 </div>
                 
-                <h2 class="text-5xl font-bold text-white mb-5 tracking-tight">
-                    Digital Procurement
+                <h2 class="heading-architectural text-6xl text-white mb-6">
+                    DIGITAL<br/>PROCUREMENT
                 </h2>
-                <p class="text-white/90 text-lg max-w-md leading-relaxed font-medium">
-                    Platform digitalisasi berita acara serah terima barang & jasa yang modern dan efisien.
+                <p class="text-white text-sm max-w-md leading-relaxed font-bold uppercase tracking-widest text-center border-t-2 border-b-2 border-lime-400 py-4">
+                    Platform digitalisasi berita acara<br/>serah terima barang & jasa
                 </p>
                 
-                <div class="mt-12 flex items-center gap-4">
-                    <div class="w-12 h-1 bg-white/40 rounded-full"></div>
-                    <div class="w-8 h-1 bg-white/60 rounded-full"></div>
-                    <div class="w-4 h-1 bg-white/30 rounded-full"></div>
+                <div class="mt-12 flex items-center gap-3">
+                    <div class="w-16 h-1 bg-lime-400"></div>
+                    <div class="w-8 h-1 bg-white opacity-50"></div>
+                    <div class="w-4 h-1 bg-white opacity-30"></div>
                 </div>
             </div>
         </div>
@@ -38,10 +48,10 @@ export default class LoginPage {
             <!-- Mobile Logo -->
             <div class="lg:hidden absolute top-8 left-8">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg">
-                        <i class="ph-bold ph-briefcase text-white text-xl"></i>
+                    <div class="w-10 h-10 bg-lime-400 flex items-center justify-center border-2 border-slate-900">
+                        <i class="ph-bold ph-briefcase text-slate-900 text-xl"></i>
                     </div>
-                    <span class="font-bold text-xl text-slate-900">ProcureApp</span>
+                    <span class="heading-architectural text-xl text-slate-900">PROCUREAPP</span>
                 </div>
             </div>
 
@@ -50,29 +60,29 @@ export default class LoginPage {
                 
                 <!-- Header -->
                 <div class="mb-10">
-                    <h1 class="text-3xl font-bold text-slate-900 mb-3 tracking-tight">
-                        Selamat Datang Kembali
+                    <h1 class="heading-architectural text-4xl text-slate-900 mb-4">
+                        SELAMAT<br/>DATANG KEMBALI
                     </h1>
-                    <p class="text-slate-500 text-base font-medium">
-                        Silakan login untuk mengelola dokumen berita acara Anda
+                    <p class="text-slate-600 text-xs font-bold uppercase tracking-widest border-l-4 border-lime-400 pl-4">
+                        LOGIN UNTUK MENGELOLA<br/>DOKUMEN BERITA ACARA
                     </p>
                 </div>
 
                 <!-- Login Form -->
-                <form id="login-form" class="space-y-5">
+                <form id="login-form" class="space-y-6">
                     
                     <!-- Email Input -->
                     <div>
-                        <label for="email" class="block text-sm font-bold text-slate-700 mb-2">
-                            Email Perusahaan
+                        <label for="email" class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                            EMAIL PERUSAHAAN
                         </label>
                         <div class="relative">
                             <i class="ph-bold ph-envelope absolute left-4 top-4 text-slate-400 text-lg"></i>
                             <input 
                                 type="email" 
                                 id="email" 
-                                class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all text-sm font-medium shadow-sm" 
-                                placeholder="admin@perusahaan.com" 
+                                class="w-full pl-12 pr-4 py-4 border-2 border-slate-900 focus:border-lime-400 focus:ring-0 outline-none transition-all text-sm font-bold tracking-tight uppercase placeholder:text-slate-400" 
+                                placeholder="ADMIN@PERUSAHAAN.COM" 
                                 required
                             >
                         </div>
@@ -80,15 +90,15 @@ export default class LoginPage {
 
                     <!-- Password Input -->
                     <div>
-                        <label for="password" class="block text-sm font-bold text-slate-700 mb-2">
-                            Password
+                        <label for="password" class="block text-[10px] font-black text-slate-900 mb-3 uppercase tracking-widest">
+                            PASSWORD
                         </label>
                         <div class="relative">
                             <i class="ph-bold ph-lock-simple absolute left-4 top-4 text-slate-400 text-lg"></i>
                             <input 
                                 type="password" 
                                 id="password" 
-                                class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all text-sm font-medium shadow-sm" 
+                                class="w-full pl-12 pr-4 py-4 border-2 border-slate-900 focus:border-lime-400 focus:ring-0 outline-none transition-all text-sm font-bold tracking-tight" 
                                 placeholder="••••••••" 
                                 required
                             >
@@ -96,30 +106,30 @@ export default class LoginPage {
                     </div>
 
                     <!-- Remember Me & Forgot Password -->
-                    <div class="flex items-center justify-between pt-1">
+                    <div class="flex items-center justify-between pt-2">
                         <label class="flex items-center cursor-pointer group">
                             <input 
                                 id="remember-me" 
                                 type="checkbox" 
-                                class="w-5 h-5 text-violet-600 border-2 border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 transition-all cursor-pointer"
+                                class="w-5 h-5 text-lime-400 border-2 border-slate-900 focus:ring-0 transition-all cursor-pointer"
                             >
-                            <span class="ml-3 text-sm text-slate-600 font-semibold group-hover:text-slate-900">
-                                Ingat perangkat ini
+                            <span class="ml-3 text-xs text-slate-600 font-bold uppercase tracking-wider group-hover:text-slate-900">
+                                INGAT PERANGKAT
                             </span>
                         </label>
-                        <a href="#" class="text-sm text-violet-600 hover:text-violet-700 font-bold transition-colors">
-                            Lupa password?
+                        <a href="#" class="text-xs text-slate-900 hover:text-lime-400 font-black uppercase tracking-wider transition-colors">
+                            LUPA PASSWORD?
                         </a>
                     </div>
 
                     <!-- Submit Button -->
                     <button 
                         type="submit" 
-                        class="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-violet-500/30 hover:shadow-xl hover:scale-[1.02] mt-6"
+                        class="w-full bg-lime-400 hover:bg-lime-500 text-slate-900 font-black py-5 transition-all duration-150 border-2 border-slate-900 hover-sharp mt-8 uppercase tracking-tight text-sm"
                     >
                         <span class="flex items-center justify-center gap-2">
                             <i class="ph-bold ph-sign-in text-xl"></i>
-                            Masuk ke Portal
+                            MASUK KE PORTAL
                         </span>
                     </button>
                 </form>
@@ -127,38 +137,38 @@ export default class LoginPage {
                 <!-- Divider -->
                 <div class="relative my-8">
                     <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-slate-200"></div>
+                        <div class="w-full border-t-2 border-slate-900"></div>
                     </div>
-                    <div class="relative flex justify-center text-xs uppercase">
-                        <span class="bg-white px-4 text-slate-500 font-bold tracking-wider">atau</span>
+                    <div class="relative flex justify-center text-[10px] uppercase">
+                        <span class="bg-white px-4 text-slate-500 font-black tracking-widest">ATAU</span>
                     </div>
                 </div>
 
-                <!-- SSO Buttons (Optional) -->
-                <div class="grid grid-cols-2 gap-3">
-                    <button class="flex items-center justify-center gap-2 px-4 py-3 border-2 border-slate-200 rounded-2xl text-sm font-bold text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all">
+                <!-- SSO Buttons -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="flex items-center justify-center gap-2 px-4 py-4 border-2 border-slate-900 text-xs font-black text-slate-900 hover:bg-slate-900 hover:text-white transition-all uppercase tracking-tight">
                         <i class="ph-bold ph-google-logo text-lg"></i>
-                        Google
+                        GOOGLE
                     </button>
-                    <button class="flex items-center justify-center gap-2 px-4 py-3 border-2 border-slate-200 rounded-2xl text-sm font-bold text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all">
+                    <button class="flex items-center justify-center gap-2 px-4 py-4 border-2 border-slate-900 text-xs font-black text-slate-900 hover:bg-slate-900 hover:text-white transition-all uppercase tracking-tight">
                         <i class="ph-bold ph-microsoft-outlook-logo text-lg"></i>
-                        Microsoft
+                        MICROSOFT
                     </button>
                 </div>
 
                 <!-- Help Text -->
-                <p class="mt-8 text-center text-sm text-slate-500">
-                    Butuh bantuan akses? 
-                    <a href="#" class="text-violet-600 font-bold hover:text-violet-700 transition-colors">
-                        Hubungi IT Support
+                <p class="mt-8 text-center text-xs text-slate-500 font-bold uppercase tracking-wider">
+                    BUTUH BANTUAN AKSES? 
+                    <a href="#" class="text-slate-900 hover:text-lime-400 font-black transition-colors">
+                        HUBUNGI IT SUPPORT
                     </a>
                 </p>
 
                 <!-- Footer Note -->
-                <div class="mt-8 p-4 bg-violet-50 rounded-2xl border border-violet-100">
-                    <p class="text-xs text-center text-violet-700 font-semibold">
+                <div class="mt-8 p-4 bg-slate-900 border-2 border-slate-900">
+                    <p class="text-[10px] text-center text-lime-400 font-black tracking-widest uppercase">
                         <i class="ph-bold ph-shield-check text-sm mr-1"></i>
-                        Login Anda dilindungi dengan enkripsi end-to-end
+                        LOGIN DILINDUNGI ENKRIPSI END-TO-END
                     </p>
                 </div>
             </div>
@@ -179,7 +189,7 @@ export default class LoginPage {
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Save to sessionStorage (not localStorage)
+      // Save to sessionStorage
       sessionStorage.setItem('userToken', 'logged-in');
 
       // Redirect to Dashboard
