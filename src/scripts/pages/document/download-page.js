@@ -4,31 +4,31 @@ export default class DownloadPage {
       <!-- Page Header -->
       <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-8 gap-4">
           <div>
-              <h2 class="text-3xl font-bold text-slate-900 mb-2 tracking-tight">Pusat Unduhan Dokumen</h2>
-              <p class="text-slate-500 font-medium">Unduh arsip BAPB dan Berita Acara yang telah selesai</p>
+              <h2 class="heading-architectural text-4xl text-slate-900 mb-3">PUSAT UNDUHAN</h2>
+              <p class="text-slate-600 text-xs font-bold uppercase tracking-widest border-l-4 border-lime-400 pl-4">UNDUH ARSIP BAPB DAN BERITA ACARA</p>
               
               <!-- Stats Mini -->
-              <div class="flex gap-4 mt-4">
-                  <div class="flex items-center gap-2 bg-violet-50 px-4 py-2 rounded-xl border border-violet-100">
-                      <i class="ph-bold ph-files text-violet-600"></i>
-                      <span class="text-sm font-bold text-violet-700">142 Total</span>
+              <div class="flex gap-4 mt-6">
+                  <div class="flex items-center gap-2 bg-white border-2 border-slate-900 px-4 py-2">
+                      <i class="ph-bold ph-files text-slate-900"></i>
+                      <span class="text-xs font-black text-slate-900 tracking-tight">142 TOTAL</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-100">
-                      <i class="ph-bold ph-download-simple text-emerald-600"></i>
-                      <span class="text-sm font-bold text-emerald-700">1.2K Diunduh</span>
+                  <div class="flex items-center gap-2 bg-lime-400 border-2 border-slate-900 px-4 py-2">
+                      <i class="ph-bold ph-download-simple text-slate-900"></i>
+                      <span class="text-xs font-black text-slate-900 tracking-tight">1.2K DIUNDUH</span>
                   </div>
               </div>
           </div>
           
           <a href="#/" 
-             class="inline-flex items-center gap-2 text-slate-600 hover:text-violet-600 font-bold transition-colors px-5 py-3 rounded-2xl hover:bg-white shadow-sm hover:shadow-md">
+             class="inline-flex items-center gap-2 text-slate-900 hover:text-lime-400 font-black transition-colors px-6 py-4 border-2 border-slate-900 hover:bg-slate-900 hover:text-lime-400 uppercase tracking-tight text-xs">
               <i class="ph-bold ph-arrow-left text-lg"></i> 
-              Kembali
+              KEMBALI
           </a>
       </div>
 
       <!-- Filter Section -->
-      <div class="bg-white rounded-3xl shadow-soft border border-slate-100 p-6 mb-8">
+      <div class="bg-white border-2 border-slate-900 p-6 mb-8">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
               
               <!-- Search -->
@@ -36,22 +36,22 @@ export default class DownloadPage {
                   <i class="ph-bold ph-magnifying-glass absolute left-4 top-4 text-slate-400 text-lg"></i>
                   <input 
                       type="text" 
-                      placeholder="Cari nama dokumen, vendor..." 
-                      class="w-full pl-12 pr-4 py-3.5 border-2 border-slate-200 rounded-2xl text-sm font-medium focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all"
+                      placeholder="CARI NAMA DOKUMEN, VENDOR..." 
+                      class="w-full pl-12 pr-4 py-4 border-2 border-slate-900 text-xs font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all uppercase tracking-tight placeholder:text-slate-400"
                   >
               </div>
               
               <!-- Category Filter -->
-              <select class="px-4 py-3.5 border-2 border-slate-200 rounded-2xl text-sm font-medium focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all bg-white">
-                  <option>Semua Kategori</option>
-                  <option>BAPB (Barang)</option>
-                  <option>BAPP (Jasa)</option>
+              <select class="px-4 py-4 border-2 border-slate-900 text-xs font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all bg-white uppercase tracking-tight">
+                  <option>SEMUA KATEGORI</option>
+                  <option>BAPB (BARANG)</option>
+                  <option>BAPP (JASA)</option>
               </select>
               
               <!-- Date Filter -->
               <input 
                   type="month" 
-                  class="px-4 py-3.5 border-2 border-slate-200 rounded-2xl text-sm font-medium focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 outline-none transition-all"
+                  class="px-4 py-4 border-2 border-slate-900 text-xs font-bold focus:border-lime-400 focus:ring-0 outline-none transition-all uppercase tracking-tight"
                   value="2025-11"
               >
           </div>
@@ -61,25 +61,25 @@ export default class DownloadPage {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           
           <!-- Document 1 -->
-          <div class="group bg-white rounded-3xl shadow-soft border border-slate-100 hover:shadow-soft-lg transition-all overflow-hidden">
+          <div class="group bg-white border-2 border-slate-900 hover-sharp transition-all overflow-hidden">
               <div class="p-6">
                   <div class="flex items-start gap-4">
                       <!-- File Icon -->
-                      <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-500/30 group-hover:scale-110 transition-transform">
-                          <i class="ph-bold ph-file-pdf text-white text-2xl"></i>
+                      <div class="w-14 h-14 bg-red-500 border-2 border-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-400 transition-colors">
+                          <i class="ph-bold ph-file-pdf text-white group-hover:text-slate-900 text-2xl"></i>
                       </div>
                       
                       <!-- File Info -->
                       <div class="flex-1 min-w-0">
-                          <h4 class="font-bold text-slate-900 text-base mb-1 truncate">BAPB-XI/2025/001.pdf</h4>
-                          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 font-semibold mb-3">
+                          <h4 class="font-black text-slate-900 text-base mb-2 tracking-tight uppercase">BAPB-XI/2025/001.PDF</h4>
+                          <div class="flex flex-wrap items-center gap-3 text-[10px] text-slate-500 font-bold mb-3 uppercase tracking-widest">
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-buildings"></i>
-                                  PT. Sinar Jaya
+                                  PT. SINAR JAYA
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-calendar"></i>
-                                  24 Nov 2025
+                                  24 NOV 2025
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-file"></i>
@@ -89,18 +89,18 @@ export default class DownloadPage {
                           
                           <!-- Tags -->
                           <div class="flex flex-wrap gap-2">
-                              <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-lg border border-emerald-200 text-xs font-bold">
+                              <span class="inline-flex items-center gap-2 bg-lime-400 text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   <i class="ph-bold ph-check-circle"></i>
-                                  Approved
+                                  APPROVED
                               </span>
-                              <span class="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-lg border border-blue-200 text-xs font-bold">
+                              <span class="inline-flex items-center bg-white text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   BAPB
                               </span>
                           </div>
                       </div>
                       
                       <!-- Download Button -->
-                      <button class="w-11 h-11 rounded-xl bg-violet-50 border-2 border-violet-200 hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 text-violet-600 hover:text-white transition-all flex items-center justify-center flex-shrink-0 hover:scale-110">
+                      <button class="w-12 h-12 bg-lime-400 border-2 border-slate-900 hover:bg-slate-900 hover:text-lime-400 text-slate-900 transition-all flex items-center justify-center flex-shrink-0">
                           <i class="ph-bold ph-download-simple text-xl"></i>
                       </button>
                   </div>
@@ -108,23 +108,23 @@ export default class DownloadPage {
           </div>
 
           <!-- Document 2 -->
-          <div class="group bg-white rounded-3xl shadow-soft border border-slate-100 hover:shadow-soft-lg transition-all overflow-hidden">
+          <div class="group bg-white border-2 border-slate-900 hover-sharp transition-all overflow-hidden">
               <div class="p-6">
                   <div class="flex items-start gap-4">
-                      <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
-                          <i class="ph-bold ph-file-doc text-white text-2xl"></i>
+                      <div class="w-14 h-14 bg-blue-500 border-2 border-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-400 transition-colors">
+                          <i class="ph-bold ph-file-doc text-white group-hover:text-slate-900 text-2xl"></i>
                       </div>
                       
                       <div class="flex-1 min-w-0">
-                          <h4 class="font-bold text-slate-900 text-base mb-1 truncate">SPK-Logistik-004.docx</h4>
-                          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 font-semibold mb-3">
+                          <h4 class="font-black text-slate-900 text-base mb-2 tracking-tight uppercase">SPK-LOGISTIK-004.DOCX</h4>
+                          <div class="flex flex-wrap items-center gap-3 text-[10px] text-slate-500 font-bold mb-3 uppercase tracking-widest">
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-buildings"></i>
-                                  Internal Memo
+                                  INTERNAL MEMO
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-calendar"></i>
-                                  20 Nov 2025
+                                  20 NOV 2025
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-file"></i>
@@ -133,17 +133,17 @@ export default class DownloadPage {
                           </div>
                           
                           <div class="flex flex-wrap gap-2">
-                              <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-lg border border-emerald-200 text-xs font-bold">
+                              <span class="inline-flex items-center gap-2 bg-lime-400 text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   <i class="ph-bold ph-check-circle"></i>
-                                  Signed
+                                  SIGNED
                               </span>
-                              <span class="inline-flex items-center bg-purple-50 text-purple-700 px-3 py-1 rounded-lg border border-purple-200 text-xs font-bold">
+                              <span class="inline-flex items-center bg-white text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   SPK
                               </span>
                           </div>
                       </div>
                       
-                      <button class="w-11 h-11 rounded-xl bg-violet-50 border-2 border-violet-200 hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 text-violet-600 hover:text-white transition-all flex items-center justify-center flex-shrink-0 hover:scale-110">
+                      <button class="w-12 h-12 bg-lime-400 border-2 border-slate-900 hover:bg-slate-900 hover:text-lime-400 text-slate-900 transition-all flex items-center justify-center flex-shrink-0">
                           <i class="ph-bold ph-download-simple text-xl"></i>
                       </button>
                   </div>
@@ -151,23 +151,23 @@ export default class DownloadPage {
           </div>
 
           <!-- Document 3 -->
-          <div class="group bg-white rounded-3xl shadow-soft border border-slate-100 hover:shadow-soft-lg transition-all overflow-hidden">
+          <div class="group bg-white border-2 border-slate-900 hover-sharp transition-all overflow-hidden">
               <div class="p-6">
                   <div class="flex items-start gap-4">
-                      <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-500/30 group-hover:scale-110 transition-transform">
-                          <i class="ph-bold ph-file-pdf text-white text-2xl"></i>
+                      <div class="w-14 h-14 bg-red-500 border-2 border-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-400 transition-colors">
+                          <i class="ph-bold ph-file-pdf text-white group-hover:text-slate-900 text-2xl"></i>
                       </div>
                       
                       <div class="flex-1 min-w-0">
-                          <h4 class="font-bold text-slate-900 text-base mb-1 truncate">BAPP-XI/2025/012.pdf</h4>
-                          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 font-semibold mb-3">
+                          <h4 class="font-black text-slate-900 text-base mb-2 tracking-tight uppercase">BAPP-XI/2025/012.PDF</h4>
+                          <div class="flex flex-wrap items-center gap-3 text-[10px] text-slate-500 font-bold mb-3 uppercase tracking-widest">
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-buildings"></i>
-                                  CV. Teknologi Digital
+                                  CV. TEKNOLOGI DIGITAL
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-calendar"></i>
-                                  18 Nov 2025
+                                  18 NOV 2025
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-file"></i>
@@ -176,17 +176,17 @@ export default class DownloadPage {
                           </div>
                           
                           <div class="flex flex-wrap gap-2">
-                              <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-lg border border-emerald-200 text-xs font-bold">
+                              <span class="inline-flex items-center gap-2 bg-lime-400 text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   <i class="ph-bold ph-check-circle"></i>
-                                  Completed
+                                  COMPLETED
                               </span>
-                              <span class="inline-flex items-center bg-purple-50 text-purple-700 px-3 py-1 rounded-lg border border-purple-200 text-xs font-bold">
+                              <span class="inline-flex items-center bg-white text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   BAPP
                               </span>
                           </div>
                       </div>
                       
-                      <button class="w-11 h-11 rounded-xl bg-violet-50 border-2 border-violet-200 hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 text-violet-600 hover:text-white transition-all flex items-center justify-center flex-shrink-0 hover:scale-110">
+                      <button class="w-12 h-12 bg-lime-400 border-2 border-slate-900 hover:bg-slate-900 hover:text-lime-400 text-slate-900 transition-all flex items-center justify-center flex-shrink-0">
                           <i class="ph-bold ph-download-simple text-xl"></i>
                       </button>
                   </div>
@@ -194,23 +194,23 @@ export default class DownloadPage {
           </div>
 
           <!-- Document 4 -->
-          <div class="group bg-white rounded-3xl shadow-soft border border-slate-100 hover:shadow-soft-lg transition-all overflow-hidden">
+          <div class="group bg-white border-2 border-slate-900 hover-sharp transition-all overflow-hidden">
               <div class="p-6">
                   <div class="flex items-start gap-4">
-                      <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
-                          <i class="ph-bold ph-file-xls text-white text-2xl"></i>
+                      <div class="w-14 h-14 bg-emerald-500 border-2 border-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-400 transition-colors">
+                          <i class="ph-bold ph-file-xls text-white group-hover:text-slate-900 text-2xl"></i>
                       </div>
                       
                       <div class="flex-1 min-w-0">
-                          <h4 class="font-bold text-slate-900 text-base mb-1 truncate">Report-Q4-2025.xlsx</h4>
-                          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 font-semibold mb-3">
+                          <h4 class="font-black text-slate-900 text-base mb-2 tracking-tight uppercase">REPORT-Q4-2025.XLSX</h4>
+                          <div class="flex flex-wrap items-center gap-3 text-[10px] text-slate-500 font-bold mb-3 uppercase tracking-widest">
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-buildings"></i>
-                                  Quarterly Report
+                                  QUARTERLY REPORT
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-calendar"></i>
-                                  15 Nov 2025
+                                  15 NOV 2025
                               </span>
                               <span class="flex items-center gap-1">
                                   <i class="ph-bold ph-file"></i>
@@ -219,17 +219,17 @@ export default class DownloadPage {
                           </div>
                           
                           <div class="flex flex-wrap gap-2">
-                              <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg border border-blue-200 text-xs font-bold">
+                              <span class="inline-flex items-center gap-2 bg-white text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
                                   <i class="ph-bold ph-chart-bar"></i>
-                                  Report
+                                  REPORT
                               </span>
-                              <span class="inline-flex items-center bg-amber-50 text-amber-700 px-3 py-1 rounded-lg border border-amber-200 text-xs font-bold">
-                                  Excel
+                              <span class="inline-flex items-center bg-white text-slate-900 border border-slate-900 px-3 py-1 text-xs font-black tracking-tight">
+                                  EXCEL
                               </span>
                           </div>
                       </div>
                       
-                      <button class="w-11 h-11 rounded-xl bg-violet-50 border-2 border-violet-200 hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 text-violet-600 hover:text-white transition-all flex items-center justify-center flex-shrink-0 hover:scale-110">
+                      <button class="w-12 h-12 bg-lime-400 border-2 border-slate-900 hover:bg-slate-900 hover:text-lime-400 text-slate-900 transition-all flex items-center justify-center flex-shrink-0">
                           <i class="ph-bold ph-download-simple text-xl"></i>
                       </button>
                   </div>
@@ -238,19 +238,23 @@ export default class DownloadPage {
       </div>
 
       <!-- Bulk Actions Card -->
-      <div class="bg-gradient-to-br from-violet-600 to-indigo-600 rounded-3xl shadow-soft-lg p-8 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
-          <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="bg-slate-900 border-2 border-slate-900 p-8 relative overflow-hidden">
+          <!-- Architectural Grid -->
+          <div class="absolute inset-0" style="background-image: 
+              linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+              background-size: 30px 30px;">
+          </div>
           
           <div class="relative flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                  <h3 class="text-2xl font-bold text-white mb-2 tracking-tight">Unduh Semua Dokumen</h3>
-                  <p class="text-white/90 font-medium">Download arsip lengkap dalam format ZIP</p>
+                  <h3 class="heading-architectural text-3xl text-white mb-3">UNDUH SEMUA<br/>DOKUMEN</h3>
+                  <p class="text-white text-xs font-bold uppercase tracking-widest border-l-4 border-lime-400 pl-4">DOWNLOAD ARSIP LENGKAP DALAM FORMAT ZIP</p>
               </div>
               
-              <button class="inline-flex items-center justify-center gap-2 bg-white hover:bg-white/90 text-violet-600 px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-[1.02] transition-all whitespace-nowrap">
+              <button class="inline-flex items-center justify-center gap-2 bg-lime-400 hover:bg-lime-500 text-slate-900 px-8 py-5 font-black transition-all border-2 border-white uppercase tracking-tight text-sm whitespace-nowrap">
                   <i class="ph-bold ph-download-simple text-xl"></i>
-                  Download ZIP (12.4 MB)
+                  DOWNLOAD ZIP (12.4 MB)
               </button>
           </div>
       </div>
@@ -260,7 +264,7 @@ export default class DownloadPage {
   async afterRender() {
     const titleElement = document.getElementById('page-title');
     if (titleElement) {
-        titleElement.innerHTML = 'Download Dokumen';
+        titleElement.innerHTML = 'DOWNLOAD DOKUMEN';
     }
   }
 }
